@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'mb-profile',
@@ -7,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
-    firstname:string = "Abe";
-    movies = ["Empire Strikes Back","Inception","Lord of the Rings","The Godfather", "Airplane!"];
-    shows = ["The Wire", "Seinfeild", "Parks and Recreation", "Breaking Bad", "Avatar the Last Airbender"];
-    books = [ "One Flew Over the Cuckoo's Nest", "The Things they Carried", "Catch 22", "1984"];
+  constructor(private favService: FavoritesService) { }
+  firstname
+   movies;
+   shows;
+   books;
   ngOnInit() {
+    this.movies = this.favService.myMovies;
+    this.shows = this.favService.myShows;
+    this.books = this.favService.myBooks;
+    this.firstname = this.favService.firstname;
   }
-
+  
 }

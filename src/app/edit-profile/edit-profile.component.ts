@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FavoritesService } from '../favorites.service';
 @Component({
   selector: 'mb-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -7,15 +8,20 @@ import { Router } from '@angular/router';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor(private router: Router) { }
-  firstname:string = "Abe";
-    movies = ["Empire Strikes Back","Inception","Lord of the Rings","The Godfather", "Airplane!"];
-    shows = ["The Wire", "Seinfeild", "Parks and Recreation", "Breaking Bad", "Avatar the Last Airbender"];
-    books = ["Harry Potter", "One Flew Over the Cuckoo's Nest", "The Things they Carried", "Catch 22", "1984"];
+  constructor(private router: Router, private favService: FavoritesService) { }
+  firstname
+  movies;
+  shows;
+  books;
+ ngOnInit() {
+  this.movies = this.favService.myMovies;
+  this.shows = this.favService.myShows;
+  this.books = this.favService.myBooks;
+  this.firstname = this.favService.firstname;
+ }
     submitProf(){
       this.router.navigate(['profile']);
     }
-    ngOnInit() {
-  }
+   
 
 }

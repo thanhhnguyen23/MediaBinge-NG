@@ -9,6 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FavoritesService } from './favorites.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FavoritesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
