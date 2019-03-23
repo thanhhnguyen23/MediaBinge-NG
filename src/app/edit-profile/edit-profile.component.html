@@ -1,0 +1,53 @@
+<div class = "profile-page">
+  <h2>{{firstname}}'s profile</h2>
+  <br>
+  <br>
+  <h4>{{firstname}}'s favorite movies</h4>
+  <ul>
+    <li >
+     <input [value] = "movies[0]" type = "favMovie" >
+     <br>
+     <input [value] = "movies[1]" type = "favMovie" >
+     <br>
+     <input [value] = "movies[2]" type = "favMovie" >
+     <br>
+     <input [value] = "movies[3]" type = "favMovie" >
+     <br>
+     <input [value] = "movies[4]" type = "favMovie" >
+    </li>
+  </ul>
+  <br>
+  <br>
+  <h4>{{firstname}}'s favorite TV Shows</h4>
+  <ul>
+    <li>
+    <input [value] = "shows[0]" type = "favShow">
+    <br>
+    <input [value] = "shows[1]" type = "favShow">
+    <br>
+    <input [value] = "shows[2]" type = "favShow">
+    <br>
+    <input [value] = "shows[3]" type = "favShow">
+    <br>
+    <input [value] = "shows[4]" type = "favShow">
+    </li>
+  </ul>
+  <br>
+  <br>
+  <h4>{{firstname}}'s favorite books</h4>
+  <ul>
+   <li>
+     <input [value] = "books[0]" type = "favBook">
+     <br>
+     <input [value] = "books[1]" type = "favBook">
+     <br>
+     <input [value] = "books[2]" type = "favBook">
+     <br>
+     <input [value] = "books[3]" type = "favBook">
+     <br>
+     <input [value] = "books[4]" type = "favBook">
+   </li>
+  </ul>
+  <br>
+  <button><a (click) = "submitProf()">Submit</a></button>
+  </div>
