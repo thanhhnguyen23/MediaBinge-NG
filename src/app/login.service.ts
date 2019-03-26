@@ -33,7 +33,8 @@ export class LoginService {
 
     // env -> look in environments directory for API_URL
     // this.http.post(env.API_URL, credentialsJson, {observe: 'response'})
-    this.http.post(env.API_URL, credentialsJson, {responseType: 'json', observe: 'response'})
+
+    this.http.post('http://localhost:8080/MediaBinge/login' , credentialsJson, {responseType: 'json', observe: 'response'})
       .pipe(map(resp =>{
         // 'Content-Type': 'application/json'
         console.log('resp:', resp);
