@@ -1,8 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css?family=Mukta');
 html, body {
     height: 100%;
   }
-  
+
   body {
     display: -ms-flexbox;
     display: flex;
@@ -12,14 +13,14 @@ html, body {
     padding-bottom: 40px;
     background-color: #f5f5f5;
   }
-  
+
   .login-form {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: auto;
   }
-  
+
   .login-form .form-control {
     position: relative;
     box-sizing: border-box;
@@ -27,24 +28,23 @@ html, body {
     padding: 10px;
     font-size: 16px;
   }
-  
+
   .login-form .form-control:focus {
     z-index: 2;
   }
-  
+
   .login-form input[type="text"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
-  
+
   .login-form input[type="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-   
-@import url('https://fonts.googleapis.com/css?family=Mukta');
+
 
 a{
   text-decoration:none;
@@ -79,7 +79,7 @@ a{
 .login-reg-panel{
     color:#B8B8B8;
 }
-.login-reg-panel #label-login, 
+.login-reg-panel #label-login,
 .login-reg-panel #label-register{
     border:1px solid #9E9E9E;
     padding:5px 5px;
@@ -106,11 +106,11 @@ a{
     right:0;
     position:absolute;
     text-align:left;
-    
+
 }
 .right-log{right:50px !important;}
 
-.login-show, 
+.login-show,
 .register-show{
     z-index: 1;
     color:#242424;
