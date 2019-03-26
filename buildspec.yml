@@ -1,23 +1,24 @@
 version: 0.2
 
+run-as: Linux-user-name
 phases:
-install:
-commands:
-  - echo Installing source NPM dependencies…
-  - npm install
-  - npm install -g @angular/cli
-build:
-commands:
-  - echo Build started on `date`
-  - ng build --prod
-  - echo Build completed on `date`
-post_build:
-commands:
-  - echo Deploying production files to S3 web hosting bucket
-  - aws s3 sync --delete dist s3://http://s3-jose-example
-  - echo Files deployed on `date`
+  install:
+    commands:
+      - echo Installing source NPM dependencies…
+      - npm install
+      - npm install -g @angular/cli
+  build:
+    commands:
+      - echo Build started on `date`
+      - ng build --prod
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Deploying production files to S3 web hosting bucket
+      - aws s3 sync --delete dist s3://s3-jose-example
+      - echo Files deployed on `date`
 artifacts:
-files:
-  - '**/*'
-base-directory: 'dist'
-discard-paths: yes
+  files:
+    - '**/*'
+  base-directory: 'dist'
+      discard-paths: yes
