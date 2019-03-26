@@ -8,6 +8,8 @@ import { ForumsComponent } from './forums/forums.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MoviesComponent } from './movies/movies.component';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
     ForumsComponent,
     HomepageComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    MoviesComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
