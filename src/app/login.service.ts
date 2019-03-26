@@ -31,7 +31,7 @@ export class LoginService {
     let credentialsJson = JSON.stringify(credentials);
 
     // env -> look in environments directory for API_URL
-    this.http.post(env.API_URL + 'login', credentialsJson, {observe: 'response'})
+    this.http.post(env.API_URL, credentialsJson, {observe: 'response'})
       .pipe(map(resp =>{
         localStorage.setItem('mb-jwt', resp.headers.get('Authorization'));
         localStorage.setItem('mb-user', JSON.stringify(resp.body));

@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ForumsComponent } from './forums/forums.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';// TN
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule // TN
+
   ],
   providers: [],
   bootstrap: [AppComponent]
