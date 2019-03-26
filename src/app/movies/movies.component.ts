@@ -11,5 +11,6 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //get post from post service
+  text = "I have very strong opinions about movies";
 }
