@@ -16,21 +16,21 @@ export class LoginComponent {
   credentialsInvalid: boolean = false;
   credentials: Credentials;
 
-  constructor(private loginService: loginService, private router: Router) {
+  constructor(private loginService: LoginService, private router: Router) {
     console.log('LoginComponent constructed');
   }
 
   login(username: string, password: string): void{
     this.credentials = new Credentials(username, password);
-    this.loginSerivce.authenticate(this.credentials);
+    this.loginService.authenticate(this.credentials);
 
-    this.isAuthenticated.subscribe(isAuth) => {
+    this.isAuthenticated$.subscribe(isAuth => {
       if(isAuth){
         this.credentialsInvalid = false;
         this.router.navigate(['services']);
       }
     }, err => {
       this.credentialsInvalid = true;
-    }
+    });
   }
 }
