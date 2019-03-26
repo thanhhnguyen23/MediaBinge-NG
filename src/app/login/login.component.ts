@@ -28,8 +28,8 @@ export class LoginComponent {
     // this.isAuthenticated$.subscribe(isAuth => {
     //   if(isAuth){
     //     this.credentialsInvalid = false;
-    //     this.router.navigate(['services']); //testig to see if this throw errors
-    //     // this.router.navigate(['']); // using to debug
+    //     // this.router.navigate(['services']); //testig to see if this throw errors
+    //     this.router.navigate(['']); // using to debug
     //   }
     // }, err => {
     //   this.credentialsInvalid = true;

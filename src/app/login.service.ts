@@ -25,16 +25,26 @@ export class LoginService {
     this._isAuthenticated.next(value);
   }
   authenticate(credentials: Credentials){
-    this.logout();
+    this.logout(); // if user isn't logged in or doesn't have a valid jwt, log them out
 
     console.log(`Attempting to login user: ${credentials.username}`);
     let credentialsJson = JSON.stringify(credentials);
+    console.log('--> credentialsJson: ',credentialsJson);
 
     // env -> look in environments directory for API_URL
-    this.http.post(env.API_URL, credentialsJson, {observe: 'response'})
+    // this.http.post(env.API_URL, credentialsJson, {observe: 'response'})
+    this.http.post(env.API_URL, credentialsJson, {responseType: 'json', observe: 'response'})
       .pipe(map(resp =>{
+        // 'Content-Type': 'application/json'
+        console.log('resp:', resp);
         localStorage.setItem('mb-jwt', resp.headers.get('Authorization'));
-        localStorage.setItem('mb-user', JSON.stringify(resp.body));
+        console.log('--> response: ', resp);
+        // localStorage.setItem('mb-user', JSON.stringify(resp.body)); // debugging
+        localStorage.setItem('userId', resp.headers.get('Info'));
+        localStorage.setItem('firstName', resp.headers.get('UserFirstName'));
+        localStorage.setItem('lastName', resp.headers.get('UserLastName'));
+        localStorage.setItem('username', resp.headers.get('UserName'));
+
       })).subscribe();
   }
 
