@@ -7,7 +7,12 @@ import { HeaderComponent } from './header/header.component';
 import { ForumsComponent } from './forums/forums.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';// TN
+import { LoginService } from './login.service';
+import { TokenInterceptor } from './token.interceptor';
+
 import { ProfileComponent } from './profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -20,9 +25,17 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule // TN
+
   ],
-  providers: [],
+  providers: [
+    LoginService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,11 +5,13 @@ import { ForumsComponent } from './forums/forums.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 
+
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'forums', component: ForumsComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent}, // adding login route
   {path: 'profile', component: ProfileComponent}
+
 ];
 
 @NgModule({

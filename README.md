@@ -1,4 +1,16 @@
-# HelloWorld
+# Media Binge Client Tier
+
+## Description
+This is the client tier for the app Media Binge a service allows you to discover new media based off of user recommendations
+
+## Contributors 
+
+ - **Thanh Nguyen**(https://github.com/thanhhnguyen23)
+ - **Omar Jamal**(https://github.com/ojamal02)
+ - **Jaitee Pitts**(https://github.com/jaiteep)
+ - **Abe Schroeder**(https://github.com/AbeSchroeder)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
