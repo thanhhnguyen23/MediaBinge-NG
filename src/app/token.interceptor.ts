@@ -28,7 +28,7 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
         let token = window.localStorage.getItem('rbs-jwt');
-        if (request.url.indexOf(environment.API_URL) >= 0 && token) {
+        if (request.url.indexOf('http://localhost:8080/MediaBinge/login') >= 0 && token) {
             console.log('Attaching JWT to Authorization header...')
             request = request.clone({
                 setHeaders: {
