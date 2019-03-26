@@ -2,14 +2,14 @@
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="username-cred" class="sr-only">Username</label>
   <input #username type="text" class="form-control" placeholder="Username" required autofocus>
-  
+
   <label for="password-cred" class="sr-only">Password</label>
   <input #password type="password" class="form-control" placeholder="Password" required>
-  
+
   <button class="btn btn-lg btn-primary btn-block" (click)="login(username.value, password.value)">Sign in</button>
   <br>
   <div *ngIf="credentialsInvalid" class="alert alert-danger text-center" id="alert-msg" role="alert">
       Invalid Credentials!
   </div>
-  <p class="mt-5 mb-3 text-muted">&copy; Revature 2017-2019</p>
+  <p class="mt-5 mb-3 text-muted">&copy; MediaBinge 2017-2019</p>
 </div>
