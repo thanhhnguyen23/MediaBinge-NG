@@ -11,13 +11,17 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';// TN
 import { LoginService } from './login.service';
 import { TokenInterceptor } from './token.interceptor';
 
+import { ProfileComponent } from './profile/profile.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ForumsComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
