@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/PostService';
 import { Post } from 'src/models/Post';
+import { template } from '@angular/core/src/render3';
 
 @Component({
   selector: 'mb-movies',
@@ -22,65 +23,32 @@ export class MoviesComponent implements OnInit {
     this.getPosts();
   }
   //get post from post service
-  allPost: Post[] = [
-    {
-      id: 4,
-      text: "wokka wokka wokka",
-      topic: "movie/tv",
-      userId: 3,
-      datePosted: '5/12/12 5:00pm'
-    },
-    {
-      id: 5,
-      text: "lalallalala",
-      topic: "movie/tv",
-      userId: 3,
-      datePosted: '5/12/12 6:00pm'
-    }
-  ];
-
-  
-
-  createPosts(data){
-    //
-  }
+  allPost: Array<Post> = [];
 
   getPosts() {
-    this.posts.getPosts().subscribe(observer);
-      //function (data) {
-    //   console.log('posts', data);
-    //   let cards = document.getElementsByClassName('card-text');
-    //   cards[0].innerHTML = data[0].text;
-      // if (data[0] === null) {
-      //   this.text = "I have very strong opinions about movies";
-      // } else {
-      //   console.log(data[0]);
-      
-      //   this.text = data[0].text;
+    this.posts.getPosts().subscribe( (data) => {
+      //converting data to Post model and adding to all post array
+      for(let i = 0; i < data.length; i++){
+        let temp: Post;
+        temp = data[i];
+        console.log('temp!: ' + temp);
+        this.allPost.push(temp);
+        
+      }
+
+      // console.log('posts', data);
+      // for(let i = 0; i < data.length; i++){
+      //   this.allPost[i].postId = data[i].postId;
+      //   this.allPost[i].datePosted = data[i].datePosted;
+      //   this.allPost[i].text = data[i].text;
+      //   this.allPost[i].topic = data[i].topic.id;
+      //   this.allPost[i].userId = data[i].user.id;
         
       // }
-      console.log(this.text);
       
-    // });
+      console.log("allPost" + this.allPost)
+      
+    });
   }
-
-  
-  setPost(){
-    this.current = this.allPost[0];
-  }
-  
-  
 }
-
-let observer = {
-  next: function(data){
-    console.log('posts', data);
-    // this.allPost = data;
-    console.log("allPost" + this.allPost)
-    let cards = document.getElementsByClassName('card-text');
-    for(let i = 0; i < data.length; i++){
-      cards[i].innerHTML = data[i].text;
-      this.datePost = data[i].datePosted;
-    }
-  }    
-}
+  

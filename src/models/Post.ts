@@ -1,7 +1,8 @@
 export class Post{
-    id: number;
+    postId: number;
     text: string;
     topic;
     userId: number;
     datePosted: string;
+
 }

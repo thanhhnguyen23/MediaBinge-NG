@@ -43,7 +43,8 @@ import { FavoritesService } from './favorites.service';
       useClass: TokenInterceptor,
       multi: true
     },
-    FavoritesService
+    FavoritesService,
+    PostService
   ],
   
   bootstrap: [AppComponent]

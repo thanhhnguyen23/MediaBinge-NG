@@ -13,19 +13,11 @@ export class PostService {
     }
     postArray: Post[];
 
-      getPosts(): Observable<Post> {
-        return this.httpClient.get<Post>(this.postsUrl);
+      getPosts(): Observable<any> {
+        return this.httpClient.get(this.postsUrl);
       }
 //topic id
 //userid
-      observer = {
-        next: function(data){
-          // console.log('posts', data);
-          for(let i = 0; i < data.length; i++){
-            this.postArray[i] = data[i];
-          }
-        }    
-      }
-      
+
 
 }
