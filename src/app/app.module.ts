@@ -7,11 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { ForumsComponent } from './forums/forums.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';// TN
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginService } from './login.service';
 import { TokenInterceptor } from './token.interceptor';
 
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FavoritesService } from './favorites.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ProfileComponent } from './profile/profile.component';
     ForumsComponent,
     HomepageComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +37,10 @@ import { ProfileComponent } from './profile/profile.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    FavoritesService
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

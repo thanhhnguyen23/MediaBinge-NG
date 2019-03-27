@@ -27,16 +27,25 @@ export class TokenInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
-        let token = window.localStorage.getItem('rbs-jwt');
-        if (request.url.indexOf('http://localhost:8080/MediaBinge/login') >= 0 && token) {
-            console.log('Attaching JWT to Authorization header...')
-            request = request.clone({
-                setHeaders: {
-                    Authorization: token
-                }
-            });
-            console.log('JWT attached!');
-        }
+        let token = localStorage.getItem('mb-jwt');
+        console.log(token);
+        request = request.clone({
+            setHeaders: {
+                'Content-Type': 'application/json'   
+            }
+    
+        });
+        // if (request.url.indexOf('http://localhost:8080/MediaBinge/login')) {
+        //     console.log('Attaching JWT to Authorization header...')
+        //     request = request.clone({
+        //         setHeaders: {
+        //             'Content-Type': 'application/json'
+                    
+        //         }
+        
+        //     });
+        //     console.log('JWT attached!');
+        // }
         console.log('Sending HTTP request to HttpHandler')
         return next.handle(request);
     }
