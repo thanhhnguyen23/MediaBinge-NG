@@ -40,7 +40,7 @@ export class LoginService {
     
         localStorage.setItem('mb-jwt', resp.headers.get('Authorization'));
         console.log(resp.headers.get('Authorization'));
-  
+        
         localStorage.setItem('userId', resp.headers.get('Info'));
         localStorage.setItem('firstName', resp.headers.get('UserFirstName'));
         localStorage.setItem('lastName', resp.headers.get('UserLastName'));
