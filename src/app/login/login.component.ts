@@ -34,7 +34,7 @@ export class LoginComponent {
   login(username: string, password: string): void{
     this.credentials = new Credentials(username, password);
     this.loginService.authenticate(this.credentials);
-
+    this.router.navigate(['profile']);
     // this block of code seems to prevent the login from loading entirely
     // this.isAuthenticated$.subscribe(isAuth => {
     //   if(isAuth){

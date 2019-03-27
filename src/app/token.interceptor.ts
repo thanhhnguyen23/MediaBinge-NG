@@ -28,13 +28,30 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
         let token = localStorage.getItem('mb-jwt');
+        console.log(request.url=='http://localhost:8080/MediaBinge/login');
         console.log(token);
+        if((request.url=='http://localhost:8080/MediaBinge/login')||(request.url=='http://localhost:8080/MediaBinge/users/register'))
+        {
         request = request.clone({
             setHeaders: {
-                'Content-Type': 'application/json'   
+                'Content-Type': 'application/json'
+                 
+                 
             }
     
         });
+         }
+         else if(token)
+         {
+            request = request.clone({
+                setHeaders: {
+                    'Content-Type': 'application/json',
+                     'Authorization':token  
+                     
+                }
+        
+            }); 
+         }
         // if (request.url.indexOf('http://localhost:8080/MediaBinge/login')) {
         //     console.log('Attaching JWT to Authorization header...')
         //     request = request.clone({
