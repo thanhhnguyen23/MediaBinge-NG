@@ -1,12 +1,13 @@
 <h1>Movie Binge</h1>
-<ul *ngIf ="allPost">
+<ul *ngIf="allPost">
   <div *ngFor="let p of allPost">
-    <div  class="col p-4 d-flex flex-column position-static">
-      <div class="card mb-4 shadow-sm" class="card mb-4 shadow-sm">      
+    <div class="col p-4 d-flex flex-column position-static">
+      <div class="card mb-4 shadow-sm" class="card mb-4 shadow-sm">
         <div class="card-body">
           {{ p.text }}
           <div class="d-flex justify-content-between align-items-center">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Reply</button>
+            
+            <mb-collapse-basic></mb-collapse-basic>
             <small class="text-muted">{{p.datePosted}}</small>
           </div>
         </div>
@@ -14,4 +15,4 @@
     </div>
   </div>
 </ul>
-  
+

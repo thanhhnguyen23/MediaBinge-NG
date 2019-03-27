@@ -3,6 +3,6 @@ export class Post{
     text: string;
     topic;
     userId: number;
-    datePosted: string;
+    datePosted: Date;
 
 }

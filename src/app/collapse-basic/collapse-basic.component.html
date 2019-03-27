@@ -1,0 +1,13 @@
+<p>
+  <button type="button" class="btn btn-sm btn-outline-secondary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          Replies
+  </button>
+</p>
+<div id="collapseExample" [hidden]="isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      You can collapse this card by clicking Toggle
+    </div>
+  </div>
+</div>
