@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MoviesComponent } from './movies/movies.component';
 import { BooksComponent } from './books/books.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './services/PostService';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { BooksComponent } from './books/books.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
