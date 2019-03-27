@@ -14,7 +14,6 @@ import { TokenInterceptor } from './token.interceptor';
 import { ProfileComponent } from './profile/profile.component';
 import { MoviesComponent } from './movies/movies.component';
 import { BooksComponent } from './books/books.component';
-import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/PostService';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FavoritesService } from './favorites.service';
@@ -28,21 +27,13 @@ import { FavoritesService } from './favorites.service';
     HomepageComponent,
     LoginComponent,
     ProfileComponent,
-<<<<<<< HEAD
     MoviesComponent,
-    BooksComponent
-=======
+    BooksComponent,
     EditProfileComponent
->>>>>>> ea15cd675fa9192bca0560b5c07f2dcc40db112d
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    HttpClientModule
-  ],
-  providers: [PostService],
-=======
     HttpClientModule // TN
 
   ],
@@ -55,7 +46,6 @@ import { FavoritesService } from './favorites.service';
     FavoritesService
   ],
   
->>>>>>> ea15cd675fa9192bca0560b5c07f2dcc40db112d
   bootstrap: [AppComponent]
 })
 export class AppModule { }

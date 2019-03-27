@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'forums/movies', component: MoviesComponent},
-  {path: 'forums/books', component: BooksComponent}
+  {path: 'forums/books', component: BooksComponent},
   {path:'editProfile', component: EditProfileComponent}
   
 
