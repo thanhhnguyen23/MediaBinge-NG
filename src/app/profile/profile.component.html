@@ -1,3 +1,29 @@
-<p>
-  profile works!
-</p>
+<div class = "profile-page">
+<h2>{{firstname}}'s profile</h2>
+<br>
+<br>
+<h4>{{firstname}}'s favorite movies</h4>
+<ul>
+  <li *ngFor = "let movie of movies">
+    {{movie}}
+  </li>
+</ul>
+<br>
+<br>
+<h4>{{firstname}}'s favorite TV Shows</h4>
+<ul>
+  <li *ngFor = "let show of shows">
+    {{show}}
+  </li>
+</ul>
+<br>
+<br>
+<h4>{{firstname}}'s favorite books</h4>
+<ul>
+ <li *ngFor = "let book of books">
+  {{book}}
+ </li>
+</ul>
+<br>
+<button><a routerLink = "/editProfile">Edit Profile</a></button>
+</div>

@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MoviesComponent } from './movies/movies.component';
 import { BooksComponent } from './books/books.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -14,6 +16,9 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'forums/movies', component: MoviesComponent},
   {path: 'forums/books', component: BooksComponent}
+  {path:'editProfile', component: EditProfileComponent}
+  
+
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'mb-profile',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private favService: FavoritesService) { }
+  firstname
+   movies;
+   shows;
+   books;
   ngOnInit() {
+    this.movies = this.favService.myMovies;
+    this.shows = this.favService.myShows;
+    this.books = this.favService.myBooks;
+    this.firstname = this.favService.firstname;
   }
-
+  
 }
