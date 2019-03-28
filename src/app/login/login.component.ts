@@ -15,8 +15,7 @@ import { Credentials } from '../models/credentials';// adding login dependencies
 // })
 export class LoginComponent {
 
-  useremail:string;
-  userpassword:string;
+ 
 
   loginUser(){
       this.router.navigate(['profile']);
@@ -34,16 +33,6 @@ export class LoginComponent {
   login(username: string, password: string): void{
     this.credentials = new Credentials(username, password);
     this.loginService.authenticate(this.credentials);
-    this.router.navigate(['profile']);
-    // this block of code seems to prevent the login from loading entirely
-    // this.isAuthenticated$.subscribe(isAuth => {
-    //   if(isAuth){
-    //     this.credentialsInvalid = false;
-    //     // this.router.navigate(['services']); //testig to see if this throw errors
-    //     this.router.navigate(['']); // using to debug
-    //   }
-    // }, err => {
-    //   this.credentialsInvalid = true;
-    // });
+    
   }
 }

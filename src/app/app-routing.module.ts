@@ -5,6 +5,7 @@ import { ForumsComponent } from './forums/forums.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import{ RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'forums', component: ForumsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
-  {path:'editProfile', component: EditProfileComponent}
+  {path:'editProfile', component: EditProfileComponent},
+  {path:'register', component: RegisterComponent}
   
 
 ];

@@ -14,6 +14,8 @@ import { TokenInterceptor } from './token.interceptor';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FavoritesService } from './favorites.service';
+import { RegisterComponent } from './register/register.component';
+import { RegisterService } from './register.service';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { FavoritesService } from './favorites.service';
     HomepageComponent,
     LoginComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,12 @@ import { FavoritesService } from './favorites.service';
       useClass: TokenInterceptor,
       multi: true
     },
-    FavoritesService
+    FavoritesService,
+    RegisterService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   
   bootstrap: [AppComponent]
