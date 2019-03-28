@@ -22,6 +22,4 @@ export class EditProfileComponent implements OnInit {
     submitProf(){
       this.router.navigate(['profile']);
     }
-   
-
 }
