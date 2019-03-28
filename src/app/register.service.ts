@@ -10,9 +10,9 @@ import{ Router } from '@angular/router';
 export class RegisterService {
   private readonly _isAuthenticated = new BehaviorSubject(false);
   readonly isAuthenticated$ = this._isAuthenticated.asObservable();
- 
-  
-  
+
+
+
   constructor(private http: HttpClient,private router: Router) {
     console.log('http constructed!');
    }
@@ -27,7 +27,7 @@ export class RegisterService {
     console.log(userInfo);
     let userInfoJson = JSON.stringify(userInfo);
     console.log(userInfoJson);
-    this.http.post('http://localhost:8080/MediaBinge/users/register', userInfoJson, {responseType: 'json', observe:'response'})
+    this.http.post('http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/users/register', userInfoJson, {responseType: 'json', observe:'response'})
     .pipe(map(resp =>{
               console.log(resp);
               if(resp.status == 201 )
@@ -35,6 +35,6 @@ export class RegisterService {
                 this.router.navigate(['/login']);
               }
     })).subscribe();
-  
+
   }
 }

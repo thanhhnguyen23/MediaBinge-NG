@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class ResponseService {
 
-  responseUrl:string = 'http://localhost:8080/MediaBinge/response/';
+  responseUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/response/';
   headers: Headers;
-  
+
 
     constructor(private httpClient: HttpClient) {
-      this.headers = new Headers({ 'Content-Type': 'application/json', 
+      this.headers = new Headers({ 'Content-Type': 'application/json',
       'Authorization': localStorage.getItem('mb-jwt') });
     }
 
@@ -24,8 +24,8 @@ export class ResponseService {
       postResponse(postId:number, text:string): Observable<any>{
         return this.httpClient.post(this.responseUrl+postId, text);
       }
-      
-      
+
+
 
       //userid
 
