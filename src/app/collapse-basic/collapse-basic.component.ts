@@ -24,10 +24,41 @@ export class CollapseBasicComponent implements OnInit {
         // let time: Date = data[i].datePosted.toLocaleTimeString();
         // //  console.log(time);
           this.responses.push(temp);
-
       }
     });
     console.log(this.responses);
   }
+/**Adding text box for comments */
+  addReply(event){    
+    event.target.hidden = true;
+    console.log('in add response');
+    console.log(event.target);
+    
+    let textbox = document.createElement('textarea');
+    textbox.setAttribute('id', this.postId+'-text');
+    event.target.insertAdjacentElement('afterEnd',document.createElement('div').appendChild(textbox));
+    textbox.addEventListener('keyup', (event) => {
+      //pressing enter turns the text area input into actual text
+         if (event.keyCode === 13) {
+          this.submitPost();
+      }
+    });
+    // 
+  }
+/**Submit reply */
+  submitPost(){
+    event.target.hidden = true;
+    let textInput = document.getElementById(this.postId+'-text');
+    console.log(textInput);
+    //Create a response object
+    let text = JSON.stringify(textInput.value);
+    console.log(text);
+    this.service.postResponse(this.postId, text).subscribe((data)=>{
+      console.log(data);
+      this.getAll();
+    });
+    
 }
 
+
+}
