@@ -11,9 +11,12 @@ export class EditProfileComponent implements OnInit {
 
   constructor(private router: Router, private favService: FavoritesService) { }
   firstname = localStorage.getItem('firstName');
-  movies:String[];
-  shows:String[];
-  books:String[];
+  movies:String[] = ["","","","",""];
+  shows:String[] =  ["","","","",""];
+  books:String[] =  ["","","","",""];
+  newMovies:String[];
+  newShows:String[];
+  newBooks:String[];
  ngOnInit() {
    this.getProfile();
  }
@@ -27,13 +30,25 @@ export class EditProfileComponent implements OnInit {
 
     if (data.favoriteMovies != null) {
       
-      this.movies = data.favoriteMovies.split(',');
+       this.newMovies= data.favoriteMovies.split(',');
+       for(let i = 0; i< this.newMovies.length; i++)
+       {
+         this.movies[i] = this.newMovies[i];
+       }
     }
     if (data.favoriteBooks != null) {
-      this.books = data.favoriteBooks.split(',');
+      this.newBooks= data.favoriteBooks.split(',');
+       for(let i = 0; i< this.newBooks.length; i++)
+       {
+         this.books[i] = this.newBooks[i];
+       }
     }
     if (data.favoriteTvShows != null) {
-      this.shows = data.favoriteTvShows.split(',');
+      this.newShows= data.favoriteTvShows.split(',');
+       for(let i = 0; i< this.newShows.length; i++)
+       {
+         this.shows[i] = this.newShows[i];
+       }
     }
 
     console.log('movies: ', this.movies);
@@ -41,6 +56,17 @@ export class EditProfileComponent implements OnInit {
     console.log('shows: ', this.shows);
 
   })
+}
+
+editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movie4: string, shows0: string, shows1: string, shows2: string, shows3: string, shows4: string, books0: string, books1: string, books2: string, books3: string, books4: string)
+{
+
+  let myFavMovies:String = movie0+","+movie1+","+movie2+","+movie3+","+movie4;
+  let myFavShows:String = shows0+","+shows1+","+shows2+","+shows3+","+shows4;
+  let myFavBooks:String = books0+","+books1+","+books2+","+books3+","+books4;
+
+
+  let updatedProfile =  new Profile(myFavMovies,myFavBooks,myFavShows);
 }
     submitProf(){
       this.router.navigate(['profile']);
