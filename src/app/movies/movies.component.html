@@ -1,0 +1,22 @@
+<h1>Movie Binge</h1>
+<ul *ngIf="allPost">
+  <div *ngFor="let p of allPost" id={{p.id}}>
+    <div class="col p-4 d-flex flex-column position-static">
+      <div class="card mb-4 shadow-sm" class="card mb-4 shadow-sm">
+        <b>{{p.user.username}} says:</b>
+        
+        <div class="card-body">
+          {{ p.text }}<br/>
+          <small class="text-muted">{{p.datePosted}}</small>
+        </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <mb-collapse-basic [postId]="p.postId"></mb-collapse-basic>                              
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</ul>
+

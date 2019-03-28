@@ -5,6 +5,7 @@ import { tap, map, catchError, first } from 'rxjs/operators';// TN
 import { HttpHeaders } from '@angular/common/http';
 import { environment as env } from '../environments/environment';// TN
 import { Credentials } from './models/credentials';// TN
+import{ Router } from '@angular/router';
 
 
 @Injectable()
@@ -13,7 +14,7 @@ export class LoginService {
   private readonly _isAuthenticated = new BehaviorSubject(this.hasToken());
   readonly isAuthenticated$ = this._isAuthenticated.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     console.log('LoginService constructed!');
   }
   get isAuthenticated(){
@@ -45,7 +46,10 @@ export class LoginService {
         localStorage.setItem('firstName', resp.headers.get('UserFirstName'));
         localStorage.setItem('lastName', resp.headers.get('UserLastName'));
         localStorage.setItem('username', resp.headers.get('UserName'));
-        this.isAuthenticated = true;
+        if(resp.status == 200)
+        {
+          this.router.navigate(['/profile']);
+        }
       })).subscribe();
   }
 

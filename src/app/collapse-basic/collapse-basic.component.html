@@ -1,0 +1,21 @@
+<p>
+  <button type="button" class="btn btn-sm btn-outline-secondary" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    {{responses.length}} Replies
+  </button>
+</p>
+<div *ngFor="let r of responses">
+  <div id="collapseExample" [hidden]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        {{r.text}}
+      </div>
+      <b>{{r.user.username}}</b>
+      <small class="text-muted">{{r.datePosted}}</small>
+    </div>
+  </div>  
+</div>
+<br/>
+  <button (click)="addReply($event)" class="btn btn-sm btn-outline-secondary" >
+    Add Reply
+  </button>
