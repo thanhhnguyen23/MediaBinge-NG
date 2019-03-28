@@ -8,6 +8,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { BooksComponent } from './books/books.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import{ RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'forums/movies', component: MoviesComponent},
   {path: 'forums/books', component: BooksComponent},
   {path:'editProfile', component: EditProfileComponent},
-  {path: 'forums/post', component: CreatePostComponent}
+  {path: 'forums/post', component: CreatePostComponent},
+  {path:'register', component: RegisterComponent}
   
 
 ];

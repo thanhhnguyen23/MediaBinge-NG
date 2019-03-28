@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import{ FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -22,6 +23,8 @@ import { FavoritesService } from './favorites.service';
 import { ResponseService } from './services/response.service';
 import { CreatePostComponent } from './create-post/create-post.component';
 
+import { RegisterComponent } from './register/register.component';
+import { RegisterService } from './register.service';
 
 
 @NgModule({
@@ -36,13 +39,15 @@ import { CreatePostComponent } from './create-post/create-post.component';
     BooksComponent,
     EditProfileComponent,
     CollapseBasicComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    FormsModule // TN
+
   ],
   providers: [
     LoginService,{
@@ -52,7 +57,12 @@ import { CreatePostComponent } from './create-post/create-post.component';
     },
     FavoritesService,
     PostService,
-    ResponseService
+    ResponseService,
+    RegisterService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   
   bootstrap: [AppComponent]
