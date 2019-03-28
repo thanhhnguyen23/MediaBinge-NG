@@ -20,10 +20,11 @@ export class FavoritesService {
   myBooks: string[];
 
   id: any = localStorage.getItem('userId');
+  profileUrl = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile/';
 
   getProfile(): Observable<any>{
     console.log('hi');
-    return this.http.get(`http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile/user`)
+    return this.http.get(`${this.profileUrl}user`);
     // http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login
 
 
@@ -31,7 +32,7 @@ export class FavoritesService {
   editMyProfile(myProf):Observable<any>{
     console.log('Hi');
     console.log(myProf);
-    return this.http.get('http://localhost:8080/MediaBinge/profile',myProf);
+    return this.http.get(this.profileUrl,myProf);
   }
 
 

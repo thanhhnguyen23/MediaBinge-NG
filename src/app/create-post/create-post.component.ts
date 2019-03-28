@@ -31,9 +31,9 @@ export class CreatePostComponent implements OnInit {
     console.log(this.newPost);
     this.service.addPosts(this.newPost).subscribe((data)=>{
       console.log(data);
-      if(this.topic === 1){
+      if(this.topic == 1){
         this.router.navigate(['/forums/movies']);
-      } else{
+      } else if(this.topic == 2){
         this.router.navigate(['/forums/books']);
       }
       
