@@ -17,9 +17,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.getProfile();
 
-    this.movies = this.favService.myMovies;
-    this.shows = this.favService.myShows;
-    this.books = this.favService.myBooks;
+    // this.movies = this.favService.myMovies;
+    // this.shows = this.favService.myShows;
+    // this.books = this.favService.myBooks;
     this.firstname = this.favService.firstname;
   }
   getProfile() {

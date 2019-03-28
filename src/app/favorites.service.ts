@@ -22,6 +22,7 @@ export class FavoritesService {
   id: any = localStorage.getItem('userId');
 
   getProfile(): Observable<any>{
+    console.log('hi');
     return this.http.get(`http://localhost:8080/MediaBinge/profile/user`)
 
 

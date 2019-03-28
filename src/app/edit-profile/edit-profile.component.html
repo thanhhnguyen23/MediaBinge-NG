@@ -3,51 +3,143 @@
   <br>
   <br>
   <h4>{{firstname}}'s favorite movies</h4>
-  <ul>
+
+  <div *ngIf = "movies"><ul  >
     <li >
-     <input [value] = "movies[0]" type = "favMovie" >
-     <br>
-     <input [value] = "movies[1]" type = "favMovie" >
-     <br>
-     <input [value] = "movies[2]" type = "favMovie" >
-     <br>
-     <input [value] = "movies[3]" type = "favMovie" >
-     <br>
-     <input [value] = "movies[4]" type = "favMovie" >
+      <div *ngIf = "movies[0]"> 
+        <input [value] = "movies[0]" type = "favMovie" >
+      </div>
+      <div *ngIf = "movies[0] == undefined"> 
+          <input [value] = "" type = "favMovie" >
+        </div>
+    
+     <div *ngIf = "movies[1]"> 
+        <input [value] = "movies[1]" type = "favMovie" >
+      </div>
+      <div *ngIf = "movies[1] == undefined"> 
+          <input [value] = "" type = "favMovie" >
+        </div>
+     
+     <div *ngIf = "movies[2]"> 
+        <input [value] = "movies[2]" type = "favMovie" >
+      </div>
+      <div *ngIf = "movies[2]==undefined"> 
+          <input value = "" type = "favMovie" >
+        </div>
+     <div *ngIf = "movies[3]"> 
+        <input [value] = "movies[3]" type = "favMovie" >
+      </div>
+      <div *ngIf = "movies[3] == undefined"> 
+          <input [value] = "" type = "favMovie" >
+        </div>
+    
+     <div *ngIf = "movies[4]"> 
+        <input [value] = "movies[4]" type = "favMovie" >
+      </div>
+      <div *ngIf = "movies[4] == undefined"> 
+          <input [value] = "" type = "favMovie" >
+        </div>
+     
     </li>
-  </ul>
+  </ul></div>
+  
   <br>
   <br>
   <h4>{{firstname}}'s favorite TV Shows</h4>
-  <ul>
-    <li>
-    <input [value] = "shows[0]" type = "favShow">
-    <br>
-    <input [value] = "shows[1]" type = "favShow">
-    <br>
-    <input [value] = "shows[2]" type = "favShow">
-    <br>
-    <input [value] = "shows[3]" type = "favShow">
-    <br>
-    <input [value] = "shows[4]" type = "favShow">
-    </li>
-  </ul>
+  <div *ngIf ="shows"><ul>
+      <li>
+          <div *ngIf = "shows[0]"> 
+              <input [value] = "shows[0]" type = "favShow" >
+            </div>
+            <div *ngIf = "shows[0] == undefined"> 
+                <input [value] = "" type = "favShow" >
+              </div>
+
+              
+          <div *ngIf = "shows[1]"> 
+              <input [value] = "shows[1]" type = "favMovie" >
+            </div>
+            <div *ngIf = "shows[1] == undefined"> 
+                <input [value] = "" type = "favMovie" >
+              </div>
+
+              
+          <div *ngIf = "shows[2]"> 
+              <input [value] = "shows[2]" type = "favMovie" >
+            </div>
+            <div *ngIf = "shows[2] == undefined"> 
+                <input [value] = "" type = "favMovie" >
+              </div>
+
+              
+          <div *ngIf = "shows[3]"> 
+              <input [value] = "shows[3]" type = "favMovie" >
+            </div>
+            <div *ngIf = "shows[3] == undefined"> 
+                <input [value] = "" type = "favMovie" >
+              </div>
+
+              
+          <div *ngIf = "shows[4]"> 
+              <input [value] = "shows[4]" type = "favMovie" >
+            </div>
+            <div *ngIf = "shows[4] == undefined"> 
+                <input [value] = "" type = "favMovie" >
+              </div>
+      </li>
+    </ul></div>  
   <br>
   <br>
   <h4>{{firstname}}'s favorite books</h4>
-  <ul>
-   <li>
-     <input [value] = "books[0]" type = "favBook">
-     <br>
-     <input [value] = "books[1]" type = "favBook">
-     <br>
-     <input [value] = "books[2]" type = "favBook">
-     <br>
-     <input [value] = "books[3]" type = "favBook">
-     <br>
-     <input [value] = "books[4]" type = "favBook">
-   </li>
-  </ul>
+  <div *ngIf = "books">
+    <ul>
+      <li>
+
+          <div *ngIf = "books[0]"> 
+              <input [value] = "books[0]" type = "favBook" >
+            </div>
+            <div *ngIf = "books[0] == undefined"> 
+                <input [value] = "" type = "favBook" >
+              </div>
+
+
+          <div *ngIf = "books[1]"> 
+              <input [value] = "books[1]" type = "favBook" >
+            </div>
+            <div *ngIf = "books[1] == undefined"> 
+                <input [value] = "" type = "favBook" >
+              </div>
+
+
+          <div *ngIf = "books[2]"> 
+              <input [value] = "books[2]" type = "favBook" >
+            </div>
+            <div *ngIf = "books[2] == undefined"> 
+                <input [value] = "" type = "favBook" >
+              </div>
+
+
+
+
+          <div *ngIf = "books[3]"> 
+              <input [value] = "books[3]" type = "favBook" >
+            </div>
+            <div *ngIf = "books[3] == undefined"> 
+                <input [value] = "" type = "favBook" >
+              </div>
+
+          <div *ngIf = "books[4]"> 
+              <input [value] = "books[4]" type = "favBook" >
+            </div>
+            <div *ngIf = "books[4] == undefined"> 
+                <input [value] = "" type = "favBook" >
+              </div>
+
+
+      </li>
+     </ul>
+  </div>
+  
   <br>
   <button><a (click) = "submitProf()">Submit</a></button>
   </div>
