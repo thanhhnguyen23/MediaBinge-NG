@@ -28,7 +28,6 @@ export class MoviesComponent implements OnInit {
         temp = data[i];
         // let time: Date = data[i].datePosted.toLocaleTimeString();
       //  console.log(time);
-        console.log('temp!: ' + temp);
         this.allPost.push(temp);
         
       }

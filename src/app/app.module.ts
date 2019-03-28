@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ForumsComponent } from './forums/forums.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { CollapseBasicComponent } from './collapse-basic/collapse-basic.component';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginService } from './login.service';
 import { TokenInterceptor } from './token.interceptor';
@@ -21,7 +19,7 @@ import { BooksComponent } from './books/books.component';
 import { PostService } from './services/PostService';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FavoritesService } from './favorites.service';
-
+import { ResponseService } from './services/response.service';
 
 
 
@@ -41,8 +39,8 @@ import { FavoritesService } from './favorites.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    // ResponseService
+    HttpClientModule
+    
   ],
   providers: [
     LoginService,{
@@ -51,7 +49,8 @@ import { FavoritesService } from './favorites.service';
       multi: true
     },
     FavoritesService,
-    PostService
+    PostService,
+    ResponseService
   ],
   
   bootstrap: [AppComponent]
