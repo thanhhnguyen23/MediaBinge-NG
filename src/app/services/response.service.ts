@@ -21,7 +21,9 @@ export class ResponseService {
         return this.httpClient.get(this.responseUrl+`postId=${postId}`);
       }
 
-      postResponse(postId:number, text:string): Observable<any>{
+      postResponse(postId:number, myResp:Response): Observable<any>{
+        let text = JSON.stringify(myResp);
+        console.log(text);
         return this.httpClient.post(this.responseUrl+postId, text);
       }
 
