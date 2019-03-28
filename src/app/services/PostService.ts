@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class PostService {
 
-    postsUrl:string = 'http://localhost:8080/MediaBinge/post';
+    postsUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/post';
 
     constructor(private httpClient: HttpClient) {
     }
