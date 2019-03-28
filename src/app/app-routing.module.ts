@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MoviesComponent } from './movies/movies.component';
 import { BooksComponent } from './books/books.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'forums/movies', component: MoviesComponent},
   {path: 'forums/books', component: BooksComponent},
-  {path:'editProfile', component: EditProfileComponent}
+  {path:'editProfile', component: EditProfileComponent},
+  {path: 'forums/post', component: CreatePostComponent}
   
 
 ];

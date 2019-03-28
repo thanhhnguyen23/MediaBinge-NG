@@ -20,6 +20,7 @@ import { PostService } from './services/PostService';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FavoritesService } from './favorites.service';
 import { ResponseService } from './services/response.service';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 
@@ -34,7 +35,8 @@ import { ResponseService } from './services/response.service';
     MoviesComponent,
     BooksComponent,
     EditProfileComponent,
-    CollapseBasicComponent
+    CollapseBasicComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

@@ -8,11 +8,7 @@ import { Credentials } from '../models/credentials';// adding login dependencies
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
+
 export class LoginComponent {
 
   useremail:string;

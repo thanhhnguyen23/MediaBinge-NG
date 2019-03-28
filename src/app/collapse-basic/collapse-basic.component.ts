@@ -31,6 +31,7 @@ export class CollapseBasicComponent implements OnInit {
   }
 /**Adding text box for comments */
   addReply(event){    
+    //add role id constraint
     event.target.hidden = true;
     console.log('in add response');
     console.log(event.target);
@@ -48,11 +49,11 @@ export class CollapseBasicComponent implements OnInit {
   }
 /**Submit reply */
   submitPost(){
-    event.target.hidden = true;
-    let textInput = document.getElementById(this.postId+'-text');
+    (<HTMLButtonElement>event.target).disabled = true;
+    let textInput = (<HTMLInputElement>document.getElementById(this.postId+'-text')).value;
     console.log(textInput);
     //Create a response object
-    let text = JSON.stringify(textInput.value);
+    let text = JSON.stringify(textInput);
     console.log(text);
     this.service.postResponse(this.postId, text).subscribe((data)=>{
       console.log(data);
