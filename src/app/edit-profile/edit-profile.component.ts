@@ -66,7 +66,7 @@ editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movi
   let myFavBooks:String = books0+","+books1+","+books2+","+books3+","+books4;
 
 
-  let updatedProfile =  new Profile(myFavMovies,myFavBooks,myFavShows);
+  // let updatedProfile =  new Profile(myFavMovies,myFavBooks,myFavShows);
 }
     submitProf(){
       this.router.navigate(['profile']);
