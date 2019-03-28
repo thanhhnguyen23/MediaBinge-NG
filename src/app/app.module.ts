@@ -55,9 +55,18 @@ import { RegisterService } from './register.service';
       useClass: TokenInterceptor,
       multi: true
     },
-    FavoritesService,
-    PostService,
-    ResponseService,
+    FavoritesService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
+    PostService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
+    ResponseService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
     RegisterService,{
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

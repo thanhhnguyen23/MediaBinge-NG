@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ResponseService } from '../services/response.service';
-
+import { Response } from '../models/response';
 
 @Component({
   selector: 'mb-collapse-basic',
@@ -23,6 +23,7 @@ export class CollapseBasicComponent implements OnInit {
     this.service.getResponse(this.postId).subscribe((data) => {
       for (let i = 0; i < data.length; i++) {
         let temp = data[i];
+        console.log(temp);
         // let time: Date = data[i].datePosted.toLocaleTimeString();
         // //  console.log(time);
           this.responses.push(temp);
@@ -51,12 +52,12 @@ export class CollapseBasicComponent implements OnInit {
 /**Submit reply */
   submitPost(){
     (<HTMLButtonElement>event.target).disabled = true;
-    let textInput = (<HTMLInputElement>document.getElementById(this.postId+'-text')).value;
-    console.log(textInput);
+    let myResp = new Response((<HTMLInputElement>document.getElementById(this.postId+'-text')).value);
+    console.log(myResp);
     //Create a response object
-    let text = JSON.stringify(textInput);
-    console.log(text);
-    this.service.postResponse(this.postId, text).subscribe((data)=>{
+    // let text = JSON.stringify(textInput);
+    console.log();
+    this.service.postResponse(this.postId, myResp).subscribe((data)=>{
       console.log(data);
       this.isCollapsed = false;
       this.getAll(); 
