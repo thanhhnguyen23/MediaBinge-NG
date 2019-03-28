@@ -12,7 +12,7 @@ export class CollapseBasicComponent implements OnInit {
   @Input() postId;
   public isCollapsed = true;
   responses: Array<Object> = [];
-  constructor(private service: ResponseService, private myResp: Response) { }
+  constructor(private service: ResponseService) { }
   ngOnInit() {
     this.getAll();
   }
@@ -22,6 +22,7 @@ export class CollapseBasicComponent implements OnInit {
     this.service.getResponse(this.postId).subscribe((data) => {
       for (let i = 0; i < data.length; i++) {
         let temp = data[i];
+        console.log(temp);
         // let time: Date = data[i].datePosted.toLocaleTimeString();
         // //  console.log(time);
           this.responses.push(temp);
