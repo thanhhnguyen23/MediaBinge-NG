@@ -3,56 +3,57 @@
   <br>
   <br>
   <h4>{{firstname}}'s favorite movies</h4>
-  <div *ngIf = "movies"><ul  >
+  <ul>
     <li >
-     <input #movie0 [value] = "movies[0]" type = "favMovie" >
+     <input #movie0 id = "movie0" [value] = "movies[0]" type = "favMovie" >
      <br>
      
-     <input #movie1 [value] = "movies[1]" type = "favMovie" >
+     <input #movie1 id = "movie1" [value] = "movies[1]" type = "favMovie" >
      <br>
-     <input #movie2 [value] = "movies[2]" type = "favMovie" >
+     <input #movie2 id = "movie2" [value] = "movies[2]" type = "favMovie" >
      <br>
-     <input #movie3 [value] = "movies[3]" type = "favMovie" >
+     <input #movie3 id = "movie3" [value] = "movies[3]" type = "favMovie" >
      <br>
-     <input #movie4 [value] = "movies[4]" type = "favMovie" >
+     <input #movie4 id = "movie4" [value] = "movies[4]" type = "favMovie" >
     </li>
-  </ul></div>
+  </ul>
   
   <br>
   <br>
   <h4>{{firstname}}'s favorite TV Shows</h4>
-  <div *ngIf ="shows"><ul>
+<ul>
       <li>
-      <input #shows0 [value] = "shows[0]" type = "favShow">
+      <input #shows0 id = "shows0" [value] = "shows[0]" type = "favShow">
       <br>
-      <input #shows1 [value] = "shows[1]" type = "favShow">
+      <input #shows1 id = "shows1" [value] = "shows[1]" type = "favShow">
       <br>
-      <input #shows2 [value] = "shows[2]" type = "favShow">
+      <input #shows2 id = "shows2" [value] = "shows[2]" type = "favShow">
       <br>
-      <input #shows3 [value] = "shows[3]" type = "favShow">
+      <input #shows3 id = "shows3" [value] = "shows[3]" type = "favShow">
       <br>
-      <input #shows4 [value] = "shows[4]" type = "favShow">
+      <input #shows4 id = "shows4" [value] = "shows[4]" type = "favShow">
       </li>
-    </ul></div>  
+    </ul> 
   <br>
   <br>
   <h4>{{firstname}}'s favorite books</h4>
-  <div *ngIf = "books">
+  
     <ul>
       <li>
-        <input #books0 [value] = "books[0]" type = "favBook">
+        <input #books0 id = "books0" [value] = "books[0]" type = "favBook">
         <br>
-        <input #books1 [value] = "books[1]" type = "favBook">
+        <input #books1 id = "books1" [value] = "books[1]" type = "favBook">
         <br>
-        <input #books2 [value] = "books[2]" type = "favBook">
+        <input #books2 id = "books2" [value] = "books[2]" type = "favBook">
         <br>
-        <input #books3 [value] = "books[3]" type = "favBook">
+        <input #books3 id = "books3" [value] = "books[3]" type = "favBook">
         <br>
-        <input #books4 [value] = "books[4]" type = "favBook">
+        <input #books4 id = "books4" [value] = "books[4]" type = "favBook">
       </li>
      </ul>
-  </div>
+     <br>
+  <button><a (click) = 'editProfile(movie0.value, movie1.value, movie2.value, movie3.value, movie4.value, shows0.value, shows1.value, shows2.value, shows3.value, shows4.value, books0.value, books1.value, books2.value, books3.value, books4.value)'>Submit</a></button>
   
-  <br>
-  <button><a (click) = "editProfile(movie0.value, movie1.value, movie2.value, movie3.value, movie4.value, shows0.value, shows1.value, shows2.value, shows3.value, shows4.value, books0.value, books1.value, books2.value, books3.value, books4.value)">Submit</a></button>
+  
+  
   </div>
