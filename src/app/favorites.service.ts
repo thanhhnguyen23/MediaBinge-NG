@@ -27,6 +27,11 @@ export class FavoritesService {
 
 
   }
+  editMyProfile(myProf):Observable<any>{
+    console.log('Hi');
+    console.log(myProf);
+    return this.http.get('http://localhost:8080/MediaBinge/profile',myProf);
+  }
 
 
 
