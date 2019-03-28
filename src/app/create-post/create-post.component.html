@@ -9,6 +9,7 @@
   
 </textarea>
 <br/>
-<button (click)="addPost($event)" class="btn btn-sm btn-outline-secondary" >
+<button [disabled]="isBlocked" (click)="addPost($event)" class="btn btn-sm btn-outline-secondary" >
   Add Reply
 </button>
+<b><p [hidden]="!isBlocked">Your posting permissions have been taken away by an Admin</p></b>

@@ -10,7 +10,8 @@ import{ Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
-
+  loginUrl = 'http://localhost:8080/MediaBinge/login';
+  // loginUrl = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login';
   private readonly _isAuthenticated = new BehaviorSubject(this.hasToken());
   readonly isAuthenticated$ = this._isAuthenticated.asObservable();
 
@@ -34,7 +35,8 @@ export class LoginService {
     // this.http.post(env.API_URL, credentialsJson, {observe: 'response'})
 
 
-    this.http.post('http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login' , credentialsJson,  {responseType: 'json', observe: 'response'})
+
+    this.http.post( this.loginUrl, credentialsJson,  {responseType: 'json', observe: 'response'})
       .pipe(map(resp =>{
         // 'Content-Type': 'application/json';
         console.log('resp:', resp);
@@ -43,6 +45,8 @@ export class LoginService {
         console.log(resp.headers.get('Authorization'));
 
         localStorage.setItem('userId', resp.headers.get('Info'));
+        localStorage.setItem('userRole', resp.headers.get('Role'));
+        console.log(localStorage.getItem('userRole')+': user role');
         localStorage.setItem('firstName', resp.headers.get('UserFirstName'));
         localStorage.setItem('lastName', resp.headers.get('UserLastName'));
         localStorage.setItem('username', resp.headers.get('UserName'));

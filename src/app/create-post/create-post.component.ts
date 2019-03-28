@@ -13,6 +13,7 @@ export class CreatePostComponent implements OnInit {
   postBody:string;
   topic:number;
   newPost:Post = new Post();
+  isBlocked:boolean = localStorage.getItem('userRole') === '3';
 
   constructor(private service:PostService, private router:Router) { }
 

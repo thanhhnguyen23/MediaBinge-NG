@@ -11,6 +11,7 @@ export class CollapseBasicComponent implements OnInit {
 
   @Input() postId;
   public isCollapsed = true;
+  isBlocked:boolean = localStorage.getItem('userRole') === '3';
   responses: Array<Object> = [];
   constructor(private service: ResponseService) { }
   ngOnInit() {

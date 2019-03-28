@@ -21,6 +21,9 @@ export class EditProfileComponent implements OnInit {
   newMovies:String[];
   newShows:String[];
   newBooks:String[];
+  isClicked = false;
+  // profileUrl = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile';
+  profileUrl = 'http://localhost:8080/MediaBinge/profile';
  ngOnInit() {
    this.getProfile();
  }
@@ -63,7 +66,7 @@ export class EditProfileComponent implements OnInit {
 
 editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movie4: string, shows0: string, shows1: string, shows2: string, shows3: string, shows4: string, books0: string, books1: string, books2: string, books3: string, books4: string)
 {
-
+  this.isClicked = true;
   let myFavMovies:string = movie0+","+movie1+","+movie2+","+movie3+","+movie4;
   let myFavShows:string = shows0+","+shows1+","+shows2+","+shows3+","+shows4;
   let myFavBooks:string = books0+","+books1+","+books2+","+books3+","+books4;
