@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Post } from '../models/Post';
 
 @Injectable()
 export class PostService {
@@ -22,6 +23,9 @@ export class PostService {
       }
 
       //userid
+      addPosts(post:Post): Observable<any> {
+        return this.httpClient.post(this.postsUrl,post);
+      }
 
 
 }
