@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ResponseService } from '../services/response.service';
-
+import { Response } from '../models/response';
 
 @Component({
   selector: 'mb-collapse-basic',
@@ -12,7 +12,7 @@ export class CollapseBasicComponent implements OnInit {
   @Input() postId;
   public isCollapsed = true;
   responses: Array<Object> = [];
-  constructor(private service: ResponseService) { }
+  constructor(private service: ResponseService, private myResp: Response) { }
   ngOnInit() {
     this.getAll();
   }
