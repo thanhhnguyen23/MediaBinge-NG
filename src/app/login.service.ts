@@ -32,16 +32,16 @@ export class LoginService {
 
     // env -> look in environments directory for API_URL
     // this.http.post(env.API_URL, credentialsJson, {observe: 'response'})
-    
 
-    this.http.post('http://localhost:8080/MediaBinge/login' , credentialsJson,  {responseType: 'json', observe: 'response'})
+
+    this.http.post('http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login' , credentialsJson,  {responseType: 'json', observe: 'response'})
       .pipe(map(resp =>{
         // 'Content-Type': 'application/json';
         console.log('resp:', resp);
-    
+
         localStorage.setItem('mb-jwt', resp.headers.get('Authorization'));
         console.log(resp.headers.get('Authorization'));
-        
+
         localStorage.setItem('userId', resp.headers.get('Info'));
         localStorage.setItem('firstName', resp.headers.get('UserFirstName'));
         localStorage.setItem('lastName', resp.headers.get('UserLastName'));
