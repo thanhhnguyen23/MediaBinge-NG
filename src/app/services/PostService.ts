@@ -6,7 +6,8 @@ import { Post } from '../models/Post';
 @Injectable()
 export class PostService {
 
-    postsUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/post';
+    // postsUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/post';
+    postsUrl:string = 'http://localhost:8080/MediaBinge/post/';
 
     constructor(private httpClient: HttpClient) {
     }

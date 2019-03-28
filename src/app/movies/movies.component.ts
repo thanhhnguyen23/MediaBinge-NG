@@ -25,7 +25,6 @@ export class MoviesComponent implements OnInit {
     this.posts.getMoviePosts().subscribe( (data) => {
       //converting data to Post model and adding to all post array
       for(let i = 0; i < data.length; i++){
-        console.log(data);
         console.log(data[i]);
         let temp: Post;
         let userTemp:User;

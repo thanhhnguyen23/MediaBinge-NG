@@ -42,8 +42,6 @@ export class LoginService {
         console.log('resp:', resp);
 
         localStorage.setItem('mb-jwt', resp.headers.get('Authorization'));
-        console.log(resp.headers.get('Authorization'));
-
         localStorage.setItem('userId', resp.headers.get('Info'));
         localStorage.setItem('userRole', resp.headers.get('Role'));
         console.log(localStorage.getItem('userRole')+': user role');
