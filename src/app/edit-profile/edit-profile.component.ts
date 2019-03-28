@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FavoritesService } from '../favorites.service';
 import { Profile } from '../models/Profile';
+import { partialProf } from '../models/partialProf';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { tap, map, catchError, first } from 'rxjs/operators';
 @Component({
   selector: 'mb-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -9,8 +12,9 @@ import { Profile } from '../models/Profile';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor(private router: Router, private favService: FavoritesService) { }
+  constructor(private router: Router, private favService: FavoritesService, private http: HttpClient) { }
   firstname = localStorage.getItem('firstName');
+   myProfile: Profile;
   movies:String[] = ["","","","",""];
   shows:String[] =  ["","","","",""];
   books:String[] =  ["","","","",""];
@@ -25,8 +29,7 @@ export class EditProfileComponent implements OnInit {
   this.favService.getProfile().subscribe((data) => {
     console.log('getProfile() method');
     console.log('data: ', data);
-    let myProfile: Profile;
-    myProfile = data;
+    this.myProfile = data;
 
     if (data.favoriteMovies != null) {
       
@@ -61,12 +64,30 @@ export class EditProfileComponent implements OnInit {
 editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movie4: string, shows0: string, shows1: string, shows2: string, shows3: string, shows4: string, books0: string, books1: string, books2: string, books3: string, books4: string)
 {
 
-  let myFavMovies:String = movie0+","+movie1+","+movie2+","+movie3+","+movie4;
-  let myFavShows:String = shows0+","+shows1+","+shows2+","+shows3+","+shows4;
-  let myFavBooks:String = books0+","+books1+","+books2+","+books3+","+books4;
+  let myFavMovies:string = movie0+","+movie1+","+movie2+","+movie3+","+movie4;
+  let myFavShows:string = shows0+","+shows1+","+shows2+","+shows3+","+shows4;
+  let myFavBooks:string = books0+","+books1+","+books2+","+books3+","+books4;
 
 
-  let updatedProfile =  new Profile(myFavMovies,myFavBooks,myFavShows);
+   let updatedProfile =  new partialProf(this.myProfile.profileId,myFavMovies,myFavBooks,myFavShows);
+   let partialProfJson = JSON.stringify(updatedProfile)
+  console.log(partialProfJson);
+  this.http.patch('http://localhost:8080/MediaBinge/profile', partialProfJson, {responseType: 'json', observe: 'response'})
+  .pipe(map(resp =>{
+    console.log(resp);
+    if(199 < resp.status && resp.status <300 )
+    {
+      this.router.navigate(['/profile']);
+    }
+})).subscribe();
+  //  this.favService.editMyProfile(partialProfJson).subscribe((data)=>{
+  //    console.log(data);
+  //    if(data != undefined)
+  //    {
+  //      this.submitProf;
+  //    }
+  //  })
+
 }
     submitProf(){
       this.router.navigate(['profile']);

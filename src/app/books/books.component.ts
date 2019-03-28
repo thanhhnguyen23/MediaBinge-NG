@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/PostService';
-import { Post } from 'src/models/Post';
+import { Post } from 'src/app/models/Post';
 
 @Component({
   selector: 'mb-books',
