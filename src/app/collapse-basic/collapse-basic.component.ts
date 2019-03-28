@@ -18,6 +18,7 @@ export class CollapseBasicComponent implements OnInit {
   }
 
   getAll() {
+    this.responses = [];
     this.service.getResponse(this.postId).subscribe((data) => {
       for (let i = 0; i < data.length; i++) {
         let temp = data[i];
@@ -55,9 +56,10 @@ export class CollapseBasicComponent implements OnInit {
     console.log(text);
     this.service.postResponse(this.postId, text).subscribe((data)=>{
       console.log(data);
-      this.getAll();
+      this.isCollapsed = false;
+      this.getAll(); 
     });
-    
+       
 }
 
 
