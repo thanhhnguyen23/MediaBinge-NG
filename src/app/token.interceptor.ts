@@ -28,17 +28,17 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
         let token = localStorage.getItem('mb-jwt');
-        console.log(request.url=='http://localhost:8080/MediaBinge/login');
+        console.log(request.url=='http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login');
         console.log(token);
-        if((request.url=='http://localhost:8080/MediaBinge/login')||(request.url=='http://localhost:8080/MediaBinge/users/register'))
+        if((request.url=='http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login')||(request.url=='http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/users/register'))
         {
         request = request.clone({
             setHeaders: {
                 'Content-Type': 'application/json'
-                 
-                 
+
+
             }
-    
+
         });
          }
          else if(token)
@@ -46,20 +46,20 @@ export class TokenInterceptor implements HttpInterceptor {
             request = request.clone({
                 setHeaders: {
                     'Content-Type': 'application/json',
-                     'Authorization':token  
-                     
+                     'Authorization':token
+
                 }
-        
-            }); 
+
+            });
          }
         // if (request.url.indexOf('http://localhost:8080/MediaBinge/login')) {
         //     console.log('Attaching JWT to Authorization header...')
         //     request = request.clone({
         //         setHeaders: {
         //             'Content-Type': 'application/json'
-                    
+
         //         }
-        
+
         //     });
         //     console.log('JWT attached!');
         // }
