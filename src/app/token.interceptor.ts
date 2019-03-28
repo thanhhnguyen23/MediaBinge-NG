@@ -28,7 +28,9 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
         let token = localStorage.getItem('mb-jwt');
+      
         console.log(request.url=='http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login');
+
         console.log(token);
         if((request.url=='http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login')||(request.url=='http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/users/register'))
         {
