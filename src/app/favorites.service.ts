@@ -23,7 +23,8 @@ export class FavoritesService {
 
   getProfile(): Observable<any>{
     console.log('hi');
-    return this.http.get(`http://localhost:8080/MediaBinge/profile/user`)
+    return this.http.get(`http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com//profile/user`)
+    // http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login
 
 
   }
