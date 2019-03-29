@@ -27,12 +27,12 @@ export class FavoritesService {
   }
   getUserProfile(username:String): Observable<any>{
     console.log("the username is" + username);
-    return this.http.get(`http://localhost:8080/MediaBinge/profile/user=${username}`)
+    return this.http.get(`http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile/user=${username}`)
   }
   editMyProfile(myProf):Observable<any>{
     console.log('Hi');
     console.log(myProf);
-    return this.http.get('http://localhost:8080/MediaBinge/profile',myProf);
+    return this.http.get('http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile/',myProf);
   }
 
 

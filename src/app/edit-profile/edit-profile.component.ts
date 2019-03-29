@@ -62,19 +62,10 @@ export class EditProfileComponent implements OnInit {
       console.log('books: ', this.books);
       console.log('shows: ', this.shows);
 
-<<<<<<< HEAD
     })
   }
 
   editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movie4: string, shows0: string, shows1: string, shows2: string, shows3: string, shows4: string, books0: string, books1: string, books2: string, books3: string, books4: string) {
-=======
-editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movie4: string, shows0: string, shows1: string, shows2: string, shows3: string, shows4: string, books0: string, books1: string, books2: string, books3: string, books4: string)
-{
-  this.isClicked = true;
-  let myFavMovies:string = movie0+","+movie1+","+movie2+","+movie3+","+movie4;
-  let myFavShows:string = shows0+","+shows1+","+shows2+","+shows3+","+shows4;
-  let myFavBooks:string = books0+","+books1+","+books2+","+books3+","+books4;
->>>>>>> 24acaf79a00df7ad6a64c7c20356b988fca16dae
 
     let myFavMovies: string = movie0 + "," + movie1 + "," + movie2 + "," + movie3 + "," + movie4;
     let myFavShows: string = shows0 + "," + shows1 + "," + shows2 + "," + shows3 + "," + shows4;
@@ -84,20 +75,13 @@ editProfile(movie0: string, movie1: string, movie2: string, movie3: string, movi
     let updatedProfile = new partialProf(this.myProfile.profileId, myFavMovies, myFavBooks, myFavShows);
     let partialProfJson = JSON.stringify(updatedProfile)
     console.log(partialProfJson);
-    this.http.patch('http://localhost:8080/MediaBinge/profile', partialProfJson, { responseType: 'json', observe: 'response' })
+    this.http.patch('http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile', partialProfJson, { responseType: 'json', observe: 'response' })
       .pipe(map(resp => {
         console.log(resp);
         if (199 < resp.status && resp.status < 300) {
           this.router.navigate(['/profile']);
         }
       })).subscribe();
-    //  this.favService.editMyProfile(partialProfJson).subscribe((data)=>{
-    //    console.log(data);
-    //    if(data != undefined)
-    //    {
-    //      this.submitProf;
-    //    }
-    //  })
 
   }
   submitProf() {

@@ -24,9 +24,6 @@ export class CollapseBasicComponent implements OnInit {
     this.service.getResponse(this.postId).subscribe((data) => {
       for (let i = 0; i < data.length; i++) {
         let temp = data[i];
-        // console.log(temp);
-        // let time: Date = data[i].datePosted.toLocaleTimeString();
-        // //  console.log(time);
         this.responses.push(temp);
       }
     });
@@ -54,16 +51,15 @@ export class CollapseBasicComponent implements OnInit {
   submitPost() {
     (<HTMLInputElement>event.target).disabled = true;
     let reply = ((<HTMLInputElement>document.getElementById(this.postId + '-text')).value);
-    if (reply){
+    if (!reply){
       this.isValid = false;
     }
     let myResp = new Response(reply);
     console.log(myResp);
-    //Create a response object
-    // let text = JSON.stringify(textInput);
     this.service.postResponse(this.postId, myResp).subscribe((data) => {
-      (<HTMLInputElement>event.target).disabled = false;
-      (<HTMLInputElement>event.target).value = "";
+      (<HTMLInputElement>event.target).hidden = true;
+      document.getElementById("addReplyButton").hidden = false;
+      
       this.isCollapsed = false;
       this.getAll();
       
