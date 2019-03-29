@@ -1,3 +1,16 @@
-<p>
-  create-post works!
-</p>
+<label>Choose a topic </label>
+<select [(ngModel)]="topic">
+  <option value=1>Movies/TV</option>
+  <option value=2>Books</option>
+</select>
+<br/>
+<h4>Your Post</h4>
+<textarea rows='4' cols='40' id = 'createPost' placeholder="I have opinions about movies" [(ngModel)]="postBody" >
+  
+</textarea>
+<br/>
+<button [disabled]="isBlocked" (click)="addPost($event)" class="btn btn-sm btn-outline-secondary" >
+  Add Reply
+</button>
+<b><p [hidden]="!isBlocked">Your posting permissions have been taken away by an Admin</p></b>
+<mb-invalid-input [hidden]="isValid"></mb-invalid-input>

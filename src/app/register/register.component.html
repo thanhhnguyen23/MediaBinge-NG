@@ -7,12 +7,14 @@
   <input #lastname type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname" style="border-radius:15px;">
   </div>
   <div class="col-sm-12" style="padding-top:10px;">
-  <input #username type="text" class="form-control" id="email" placeholder="Enter username" name="Username" style="border-radius:15px;">
+  <input #username type="text" class="form-control" id="username" placeholder="Enter username" name="Username" style="border-radius:15px;">
   </div>
   <div class="col-sm-12" style="padding-top:10px;">
-  <input #password type="text" class="form-control" id="password" placeholder="Type your Password" name="password" style="border-radius:15px;">
+  <input #password type="password" class="form-control" id="password" placeholder="Type your Password" name="password" style="border-radius:15px;">
   </div>
   <button (click) = 'register(username.value,firstname.value,lastname.value,password.value)' class="col-md-4 col-md-offset-4 btn" style="background-color:#ffffff; color:#626a69; font-size:20px; margin-top:10px;" type="button"> Submit
   </button>
+  <mb-invalid-input [hidden]="isValid"></mb-invalid-input>
   </div>
+  
 

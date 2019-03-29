@@ -18,9 +18,9 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'forums/movies', component: MoviesComponent},
   {path: 'forums/books', component: BooksComponent},
-  {path:'editProfile', component: EditProfileComponent},
+  {path: 'editProfile', component: EditProfileComponent},
   {path: 'forums/post', component: CreatePostComponent},
-  {path:'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent}
   
 
 ];
