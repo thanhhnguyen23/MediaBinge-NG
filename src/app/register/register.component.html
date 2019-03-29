@@ -1,5 +1,5 @@
-<div style="background-color:skyblue; height:400px; width:400px; border-radius:30px; text-align:center;" class="col-md-offset-4">
-  <h1 style="text-align:center; padding-top:30px; color:#ffffff;">Sign Up</h1>
+<div style="background: linear-gradient(to bottom, yellow 0%, floralwhite 100%); height:400px; width:400px; border-radius:30px; text-align:center;" class="col-md-offset-4">
+  <h1 style="text-align:center; padding-top:30px; color:black; text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;">Sign Up</h1>
   <div class="col-sm-12" style="padding-top:10px;">
   <input #firstname type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname" style="border-radius:15px;">
   </div>
@@ -12,7 +12,7 @@
   <div class="col-sm-12" style="padding-top:10px;">
   <input #password type="password" class="form-control" id="password" placeholder="Type your Password" name="password" style="border-radius:15px;">
   </div>
-  <button (click) = 'register(username.value,firstname.value,lastname.value,password.value)' class="col-md-4 col-md-offset-4 btn" style="background-color:#ffffff; color:#626a69; font-size:20px; margin-top:10px;" type="button"> Submit
+  <button (click) = 'register(username.value,firstname.value,lastname.value,password.value)' class="col-md-4 col-md-offset-4 btn" style="background-color:orange; color:black; font-size:20px; margin-top:10px; border-radius: 15px; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; border: solid 2px; border-color: gray" type="button"> Submit
   </button>
   <mb-invalid-input [hidden]="isValid"></mb-invalid-input>
   </div>
