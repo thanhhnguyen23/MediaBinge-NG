@@ -9,17 +9,17 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) { }
-  username:string = localStorage.getItem('username');
+  // username:string = localStorage.getItem('username');
 
   ngOnInit() {
-    this.username = localStorage.getItem('username');
+    // this.username = localStorage.getItem('username');
   }
 
   logout(){
     console.log('logging out');
     window.localStorage.clear();
     this.router.navigate(['/']);
-    this.username = null;
+    // this.username = null;
   }
 
 }
