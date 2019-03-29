@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   
   userInfo: userInfo;
   status:Number;
+  isValid:boolean = true;
   constructor(private registerService: RegisterService, private router: Router) { 
     console.log('Reg component made');
   }

@@ -1,0 +1,14 @@
+<div class="search-container">
+
+<input #searchTitle id="searchTitle" type="text" class="form-control" placeholder="Search for movies and tv shows" required autofocus>
+<!-- apiQuery -->
+<button (click)="apiQuery(searchTitle.value)" class="btn btn-primary">SEARCH</button>
+<button (click)="wipe()" class="btn btn-primary">CLEAR</button>
+</div>
+<div id="display">
+  <div id="poster-container">
+    <img id="poster-image" src="" />
+  </div>
+  <div id="info">
+  </div>
+</div>

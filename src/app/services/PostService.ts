@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Post } from '../models/Post';
 
 @Injectable()
 export class PostService {
 
-    postsUrl:string = 'http://localhost:8080/MediaBinge/post';
+    postsUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/post';
+    // postsUrl:string = 'http://localhost:8080/MediaBinge/post/';
 
     constructor(private httpClient: HttpClient) {
     }
@@ -22,6 +24,9 @@ export class PostService {
       }
 
       //userid
+      addPosts(post:Post): Observable<any> {
+        return this.httpClient.post(this.postsUrl,post);
+      }
 
 
 }
