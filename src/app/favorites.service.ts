@@ -28,6 +28,10 @@ export class FavoritesService {
 
 
   }
+  getUserProfile(username:String): Observable<any>{
+    console.log("the username is" + username);
+    return this.http.get(`http://localhost:8080/MediaBinge/profile/user=${username}`)
+  }
   editMyProfile(myProf):Observable<any>{
     console.log('Hi');
     console.log(myProf);
