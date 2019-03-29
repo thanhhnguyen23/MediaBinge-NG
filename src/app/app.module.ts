@@ -25,6 +25,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register.service';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { RegisterService } from './register.service';
     EditProfileComponent,
     CollapseBasicComponent,
     CreatePostComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // adding login dependencies - TN
-import { LoginService } from '../login.service'; // adding login dependencies - TN
-import { Credentials } from '../models/credentials';// adding login dependencies - TN
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
+import { Credentials } from '../models/credentials';
 
 @Component({
   selector: 'mb-login',
@@ -11,7 +11,7 @@ import { Credentials } from '../models/credentials';// adding login dependencies
 
 export class LoginComponent {
 
- 
+
 
   loginUser(){
       this.router.navigate(['profile']);
@@ -29,6 +29,6 @@ export class LoginComponent {
   login(username: string, password: string): void{
     this.credentials = new Credentials(username, password);
     this.loginService.authenticate(this.credentials);
-    
+
   }
 }
