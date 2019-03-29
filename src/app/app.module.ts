@@ -27,6 +27,8 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register.service';
 import { MovieProfileComponent } from './movie-profile/movie-profile.component';
 import { BooksProfileComponent } from './books-profile/books-profile.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { InvalidInputComponent } from './invalid-input/invalid-input.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { BooksProfileComponent } from './books-profile/books-profile.component';
     CreatePostComponent,
     RegisterComponent,
     MovieProfileComponent,
-    BooksProfileComponent
+    BooksProfileComponent,
+    SearchBarComponent,
+    InvalidInputComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ import { BooksProfileComponent } from './books-profile/books-profile.component';
       multi: true
     }
   ],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

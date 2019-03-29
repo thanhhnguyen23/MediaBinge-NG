@@ -11,9 +11,6 @@ export class FavoritesService {
    }
   firstname:string = localStorage.getItem('firstName');
 
-  // myMovies = ["Empire Strikes Back","Inception","Lord of the Rings","The Godfather", "Airplane!"];
-  // myShows = ["The Wire", "Seinfeild", "Parks and Recreation", "Breaking Bad", "Avatar the Last Airbender"];
-  // myBooks = [ "One Flew Over the Cuckoo's Nest", "The Things they Carried", "Catch 22", "1984"];
   // declaring structures for movies, tvShows, and books
   myMovies: string[];
   myShows: string[];

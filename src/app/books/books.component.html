@@ -1,6 +1,6 @@
 <h1>Book Binge</h1>
 <ul *ngIf="allPost">
-  <div *ngFor="let p of allPost">
+  <div *ngFor="let p of allPost" id={{p.id}}>
     <div class="col p-4 d-flex flex-column position-static">
       <div class="card mb-4 shadow-sm" class="card mb-4 shadow-sm">
           <b>{{p.user.username}} says:</b>
@@ -14,7 +14,9 @@
           </div>
         </div>
       </div>
+      
     </div>
+    
   </div>
 </ul>
 

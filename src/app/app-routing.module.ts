@@ -9,6 +9,7 @@ import { BooksComponent } from './books/books.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import{ RegisterComponent } from './register/register.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 const routes: Routes = [
@@ -18,11 +19,10 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'forums/movies', component: MoviesComponent},
   {path: 'forums/books', component: BooksComponent},
-  {path:'editProfile', component: EditProfileComponent},
+  {path: 'editProfile', component: EditProfileComponent},
   {path: 'forums/post', component: CreatePostComponent},
-  {path:'register', component: RegisterComponent}
-  
-
+  {path:'register', component: RegisterComponent},
+  {path:'search-bar', component: SearchBarComponent}
 ];
 
 @NgModule({
