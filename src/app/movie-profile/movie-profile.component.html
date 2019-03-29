@@ -1,0 +1,23 @@
+<button type="button" class="btn btn-sm btn-outline-secondary" (click)="dropdown = !dropdown"
+          [attr.aria-expanded]="!dropdown" aria-controls="profileDrop">
+          {{username}}'s' Profile
+        </button>
+
+        <div *ngFor="let u of userMovies"> 
+          <div id="profileDrop" [hidden]="dropdown">
+            <div class="card">
+              <div class="card-body">
+                Favorite Movies: {{u}}
+              </div>
+            </div>
+          </div>
+         </div>
+         <div *ngFor="let u of userShows"> 
+            <div id="profileDrop" [hidden]="dropdown">
+              <div class="card">
+                <div class="card-body">
+                  Favorite Shows: {{u}}
+                </div>
+              </div>
+            </div>
+           </div>

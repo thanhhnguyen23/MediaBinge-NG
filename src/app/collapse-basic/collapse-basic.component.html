@@ -16,7 +16,7 @@
   </div>
 </div>
 <br/>
-  <button [disabled]="isBlocked" (click)="addReply($event)" class="btn btn-sm btn-outline-secondary" >
+  <button id="addReplyButton" [disabled]="isBlocked" (click)="addReply($event)" class="btn btn-sm btn-outline-secondary" >
     Add Reply
   </button><mb-invalid-input [hidden]="isValid"></mb-invalid-input>
   <b><p [hidden]="!isBlocked">You do not have replying permissions</p></b>

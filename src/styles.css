@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    font-family: 'Futura','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Futura','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(./assets/blue-white-gradient-wallpaper-3.jpg);
+    background-size: cover;
+   background-repeat: no-repeat;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+ 
+   height: 100%;
 }
 #container {
     margin: 2% 10%;

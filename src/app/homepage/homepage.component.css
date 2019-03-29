@@ -1,3 +1,76 @@
 #title{
     text-align: center;
+    font-family: courier, courier new, serif; 
+      font-weight: bolder;
+      color: rgb(167, 143, 215); 
+       text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+     font-size: 50px;
 }
+
+.display-wheel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-360deg) translateZ(-412px); 
+    animation: swirl 15s steps(10000, end) infinite; 
+  }
+    
+  
+  .display {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+  }
+  
+  
+  .picture {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    height: 187px;
+  }
+  
+  .picture img {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .picture.a {
+    transform: rotateY(0deg) translateZ(412px);
+  }
+  .picture.b {
+    transform: rotateY(40deg) translateZ(412px);
+  }
+  .picture.c {
+    transform: rotateY(80deg) translateZ(412px);
+  }
+  .picture.d {
+    transform: rotateY(120deg) translateZ(412px);
+  }
+  .picture.e {
+    transform: rotateY(160deg) translateZ(412px);
+  }
+  .picture.f {
+    transform: rotateY(200deg) translateZ(412px);
+  }
+  .picture.g {
+    transform: rotateY(240deg) translateZ(412px);
+  }
+  .picture.h {
+    transform: rotateY(280deg) translateZ(412px);
+  }
+  .picture.i {
+    transform: rotateY(320deg) translateZ(412px);
+  }
+  
+  @keyframes swirl {   
+    from {
+      transform: rotateY(360deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  } 
