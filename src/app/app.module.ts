@@ -25,6 +25,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register.service';
+import { InvalidInputComponent } from './invalid-input/invalid-input.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { RegisterService } from './register.service';
     EditProfileComponent,
     CollapseBasicComponent,
     CreatePostComponent,
-    RegisterComponent
+    RegisterComponent,
+    InvalidInputComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +57,18 @@ import { RegisterService } from './register.service';
       useClass: TokenInterceptor,
       multi: true
     },
-    FavoritesService,
-    PostService,
-    ResponseService,
+    FavoritesService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
+    PostService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
+    ResponseService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
     RegisterService,{
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

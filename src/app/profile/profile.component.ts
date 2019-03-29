@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoritesService } from '../favorites.service';
 import { Profile } from '../models/Profile';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mb-profile',
@@ -9,12 +10,15 @@ import { Profile } from '../models/Profile';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private favService: FavoritesService) { }
+  constructor(private favService: FavoritesService, private router:Router) { }
   firstname
   movies;
   shows;
   books;
   ngOnInit() {
+    if(!localStorage.getItem('mb-jwt')){
+      this.router.navigate(['/login']);
+    }
     this.getProfile();
 
     // this.movies = this.favService.myMovies;
