@@ -11,22 +11,31 @@
       </li>
       <li  *ngIf="username" class="nav-item">
        <b style= "color:white"> Welcome {{username}}!</b>
-    </li>
+    <!-- causing merge conflicts - review later -->
+    <!-- </li>
       <li class="nav-item">
         <a class = "nav-link" routerLink="/forums">Forums</a>
       </li>
+    </li> -->
 
       <li  class="nav-item">
         <a class = "nav-link" routerLink="/profile"> Profile</a>
     </li>
+    <li class="nav-item">
+      <a class = "nav-link" routerLink="/forums">Forums</a>
+    </li>
       <li class="nav-item">
-        <a class = "nav-link" routerLink="/forums/post">Post</a>
+        <a style= "color:white" class = "nav-link" routerLink="/forums/post">Post</a>
       </li>
       <li>
       <a style= "color:white" class = "nav-link" routerLink="/" (click)="logout()">Logout</a>
       </li>
       <li>
-      <a style= "color:white" class = "nav-link" routerLink="search-bar">SEARCH BAR</a> 
+      <a style= "color:white" class = "nav-link" routerLink="search-bar">SEARCH BAR</a>
+
+      <!-- causing merge conflicts - review later -->
+      <!-- <li class="nav-item">
+      <a  class = "nav-link" routerLink="/" (click)="logout()">Logout</a> -->
       </li>
     </ul>
   </div>

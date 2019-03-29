@@ -26,6 +26,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register.service';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { InvalidInputComponent } from './invalid-input/invalid-input.component';
 
 
 @NgModule({
@@ -42,7 +43,11 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     CollapseBasicComponent,
     CreatePostComponent,
     RegisterComponent,
+<<<<<<< HEAD
     SearchBarComponent
+=======
+    InvalidInputComponent
+>>>>>>> 24acaf79a00df7ad6a64c7c20356b988fca16dae
   ],
   imports: [
     BrowserModule,
@@ -57,16 +62,25 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
       useClass: TokenInterceptor,
       multi: true
     },
-    FavoritesService,
-    PostService,
-    ResponseService,
+    FavoritesService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
+    PostService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
+    ResponseService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true},
     RegisterService,{
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
     }
   ],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
