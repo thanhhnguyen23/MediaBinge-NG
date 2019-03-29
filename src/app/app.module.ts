@@ -26,6 +26,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register.service';
 import { MovieProfileComponent } from './movie-profile/movie-profile.component';
+import { BooksProfileComponent } from './books-profile/books-profile.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { MovieProfileComponent } from './movie-profile/movie-profile.component';
     CollapseBasicComponent,
     CreatePostComponent,
     RegisterComponent,
-    MovieProfileComponent
+    MovieProfileComponent,
+    BooksProfileComponent
   ],
   imports: [
     BrowserModule,
