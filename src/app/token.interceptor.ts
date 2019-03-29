@@ -31,7 +31,7 @@ export class TokenInterceptor implements HttpInterceptor {
         console.log(request.url== this.url+'/login');
 
         console.log(token);
-        if((request.url==this.url+'/login')||(request.url==this.url+'users/register'))
+        if((request.url==this.url+'/login')||(request.url==this.url+'/users/register'))
         {
         request = request.clone({
             setHeaders: {
