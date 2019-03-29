@@ -11,9 +11,9 @@
         {{r.text}}
       </div>
       <b>{{r.user.username}}</b>
-      <small class="text-muted">{{r.datePosted}}</small>
+      <!-- <small class="text-muted">{{r.datePosted}}</small> -->
     </div>
-  </div>  
+  </div>
 </div>
 <br/>
   <button id="addReplyButton" [disabled]="isBlocked" (click)="addReply($event)" class="btn btn-sm btn-outline-secondary" >

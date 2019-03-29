@@ -16,8 +16,6 @@ import { environment } from '../environments/environment';
  *
  *      An HTTP Interceptor that attaches JWT tokens to requests to the backend API
  *      within an Authorization HTTP header.
- *
- * @author Wezley Singleton
  */
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -29,11 +27,11 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
         let token = localStorage.getItem('mb-jwt');
-      
+
         console.log(request.url== this.url+'/login');
 
         console.log(token);
-        if((request.url==this.url+'/login')||(request.url==this.url+'/register'))
+        if((request.url==this.url+'/login')||(request.url==this.url+'users/register'))
         {
         request = request.clone({
             setHeaders: {

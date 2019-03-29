@@ -4,14 +4,13 @@
     <div class="col p-4 d-flex flex-column position-static">
       <div class="card mb-4 shadow-sm" class="card mb-4 shadow-sm">
         <b>{{p.user.username}} says:</b>
-        
+
         <div class="card-body">
-          {{ p.text }}<br />
-          <small class="text-muted">{{p.datePosted}}</small>
+          {{ p.text }}<br/>
+          <!-- <small class="text-muted">{{p.datePosted}}</small> -->
         </div>
-        <div class="d-flex justify-content-between align-items-center">
-          <mb-collapse-basic [postId]="p.postId"></mb-collapse-basic>
-          <mb-movie-profile [username] = "p.user.username"></mb-movie-profile>
+          <div class="d-flex justify-content-between align-items-center">
+            <mb-collapse-basic [postId]="p.postId"></mb-collapse-basic>
         </div>
       </div>
 
@@ -19,4 +18,8 @@
 
   </div>
 
+<<<<<<< HEAD
 </ul>
+=======
+</ul>
+>>>>>>> f94f3f066808c0f55533bb188ee2e8d238bf9893
