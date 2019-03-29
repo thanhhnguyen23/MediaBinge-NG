@@ -10,7 +10,7 @@ import { Credentials } from '../models/credentials';// adding login dependencies
 })
 
 export class LoginComponent {
-
+  isValid:boolean = true;
  
 
   loginUser(){
@@ -27,8 +27,16 @@ export class LoginComponent {
   }
 
   login(username: string, password: string): void{
+    
+    if(username && password){
+    (<HTMLButtonElement>event.target).disabled = true;
     this.credentials = new Credentials(username, password);
     this.loginService.authenticate(this.credentials);
+    }
+    else{
+        this.isValid = false;
+        
+    }
     
   }
 }

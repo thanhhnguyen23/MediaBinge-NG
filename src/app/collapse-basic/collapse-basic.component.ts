@@ -11,7 +11,8 @@ export class CollapseBasicComponent implements OnInit {
 
   @Input() postId;
   public isCollapsed = true;
-  isBlocked: boolean = localStorage.getItem('userRole') === '3';
+  isBlocked: boolean = (!localStorage.getItem('userRole') || localStorage.getItem('userRole') === '3');
+  isValid: boolean = true;
   responses: Array<Object> = [];
   constructor(private service: ResponseService) { }
   ngOnInit() {
@@ -52,8 +53,11 @@ export class CollapseBasicComponent implements OnInit {
   /**Submit reply */
   submitPost() {
     (<HTMLInputElement>event.target).disabled = true;
-    
-    let myResp = new Response((<HTMLInputElement>document.getElementById(this.postId + '-text')).value);
+    let reply = ((<HTMLInputElement>document.getElementById(this.postId + '-text')).value);
+    if (reply){
+      this.isValid = false;
+    }
+    let myResp = new Response(reply);
     console.log(myResp);
     //Create a response object
     // let text = JSON.stringify(textInput);

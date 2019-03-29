@@ -10,8 +10,8 @@ import{ Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
-  loginUrl = 'http://localhost:8080/MediaBinge/login';
-  // loginUrl = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login';
+  // loginUrl = 'http://localhost:8080/MediaBinge/login';
+  loginUrl = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/login';
   private readonly _isAuthenticated = new BehaviorSubject(this.hasToken());
   readonly isAuthenticated$ = this._isAuthenticated.asObservable();
 
@@ -52,7 +52,10 @@ export class LoginService {
         {
           this.router.navigate(['/profile']);
         }
-      })).subscribe();
+      })).subscribe((error) => {
+        return error;
+      });
+      
   }
 
   logout(){

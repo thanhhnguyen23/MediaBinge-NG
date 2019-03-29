@@ -24,8 +24,8 @@ export class TokenInterceptor implements HttpInterceptor {
     constructor() {
         console.log('TokenInterceptor constructed');
     }
-    // url = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com';
-    url='http://localhost:8080/MediaBinge';
+    url = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com';
+    // url='http://localhost:8080/MediaBinge';
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('HTTP request intercepted!');
         let token = localStorage.getItem('mb-jwt');
@@ -53,17 +53,6 @@ export class TokenInterceptor implements HttpInterceptor {
 
             });
          }
-        // if (request.url.indexOf('http://localhost:8080/MediaBinge/login')) {
-        //     console.log('Attaching JWT to Authorization header...')
-        //     request = request.clone({
-        //         setHeaders: {
-        //             'Content-Type': 'application/json'
-
-        //         }
-
-        //     });
-        //     console.log('JWT attached!');
-        // }
         console.log('Sending HTTP request to HttpHandler')
         return next.handle(request);
     }

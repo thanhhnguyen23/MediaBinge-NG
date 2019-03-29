@@ -25,6 +25,9 @@ export class EditProfileComponent implements OnInit {
   // profileUrl = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/profile';
   profileUrl = 'http://localhost:8080/MediaBinge/profile';
  ngOnInit() {
+  if(!localStorage.getItem('mb-jwt')){
+    this.router.navigate(['/login']);
+  }
    this.getProfile();
  }
 

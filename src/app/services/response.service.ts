@@ -8,8 +8,8 @@ import { Response } from '../models/response';
 })
 export class ResponseService {
 
-  // responseUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/response/';
-  responseUrl:string = 'http://localhost:8080/MediaBinge/response/';
+  responseUrl:string = 'http://mediabingeeb-env-1.2dmqmp7wnb.us-east-1.elasticbeanstalk.com/response/';
+  // responseUrl:string = 'http://localhost:8080/MediaBinge/response/';
   headers: Headers;
 
 
