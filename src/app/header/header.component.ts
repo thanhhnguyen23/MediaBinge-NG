@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     console.log('logging out');
     window.localStorage.clear();
     this.router.navigate(['/']);
-    this.username = null;
+    // this.username = null;
   }
 
 }
